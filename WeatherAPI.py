@@ -20,7 +20,7 @@ def main():
     #make the request
     # get the data
     response = requests.get(url, params=parameters).json()
-    #print(response)
+    print(response)
 
     #print forecast with converted time
     forecasts = response['list']
@@ -31,7 +31,7 @@ def main():
         temp = forecast['main']['temp']
         description = forecast['weather'][0]['description']
         windSpeed = forecast['wind']['speed']
-        print(f'The weather @ {date} is {description} with a temp of {temp}, and a wind speed of {windSpeed}.')
+        print(f'The weather @ {date} is {description} with a temp of {temp}F, and a wind speed of {windSpeed}.')
 
 
 main()
